@@ -7,8 +7,6 @@ using namespace std;
 vector<string> v;
 string openclose[51];
 string c;
-string conf;
-
 
 string stack_confirm(string arr[], string num) {
 	stack<string> s;
@@ -42,6 +40,7 @@ int main() {
 		for (int j = 0; j < c.size(); j++) {
 			openclose[j] = c.substr(j, 1);
 		}
+		// 입력이 끝나고 한번에 출력해야 하므로 결과를 벡터에 저장해놓음.
 		string str = stack_confirm(openclose, c);
 		v.push_back(str);
 
