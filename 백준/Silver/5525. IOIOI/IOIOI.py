@@ -1,15 +1,18 @@
+
 n = int(input())
 m = int(input())
-s = input()
+s = input().rstrip()
 
-p_str = 'IOI'
-for _ in range(n-1):
-    p_str += 'OI'
-
+left, right = 0, 0
 cnt = 0
-for i in range(0, m-len(p_str)+1):
-    split_str = s[i:i+len(p_str)]
-    if split_str == p_str: 
-        cnt += 1
-    
+
+while right < m:
+    if s[right:right+3] == 'IOI':
+        right += 2
+        if right - left == 2 * n:
+            cnt += 1
+            left += 2
+    else:
+        left = right = right + 1
+        
 print(cnt)
